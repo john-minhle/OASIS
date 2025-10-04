@@ -1,0 +1,61 @@
+
+#iugc2024
+device: 'cuda'
+seed: 1
+fold: 1
+debug: False
+log: False
+data:
+  name: 'fhps'
+  train_folder: 'data_processed/fhps'
+  val_folder: 'data_processed/fhps'
+  test_folder: 'data_processed/fhps'
+  unlabeled_folder: 'data_processed/fhps'
+  save_folder: 'checkpoints/fhps_test'
+  train_aug: True
+  img_size: 256
+
+semi:
+  conf_thresh: 0.95
+
+train:
+  l_batchsize: 8
+  u_batchsize: 8
+  num_workers: 4
+  num_epochs: 20
+  warmup_epoch: 10
+  num_iters: False 
+  ema_decay: 0.99
+  optimizer:
+    mode: 'adamw'
+    adamw:
+      lr: 0.0001
+      betas: 
+        - 0.9
+        - 0.999
+      eps: 0.00000001 #1e-8
+      weight_decay: 0.05
+    adam:
+      lr: 0.0001
+      betas:
+        - 0.9
+        - 0.999
+
+test:
+  only_test: False  
+  test_model_dir: ''
+  num_workers: 4
+  batch_size: 8
+  
+model:
+  type: 'unet'  
+  in_channels: 3  
+  out_channels: 1  
+  name: DeepLabV3Plus
+  num_classes: 2
+
+
+model_encoder_id: 0
+model_adapt:
+  adapt_method: False
+  num_domains: 1
