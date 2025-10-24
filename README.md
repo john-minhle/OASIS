@@ -15,19 +15,6 @@ This repository implements a semi-supervised semantic segmentation approach spec
 - **K-Fold Cross Validation**: Supports 5-fold cross-validation for robust model evaluation
 - **Comprehensive Metrics**: Tracks Dice Score, IoU, and Hausdorff Distance using MONAI
 
-## 📋 Table of Contents
-
-- [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Dataset Preparation](#dataset-preparation)
-- [Configuration](#configuration)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [Model Architecture](#model-architecture)
-- [Methodology](#methodology)
-- [Results](#results)
-- [Citation](#citation)
-
 ## 🚀 Installation
 
 ### Requirements
